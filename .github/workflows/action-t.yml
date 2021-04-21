@@ -18,7 +18,7 @@ jobs:
     - name: scp
       uses: garygrossgarten/github-action-scp@release
       with:
-        local: /src/resources/points-registry-server.jar
+        local: /base-projects/registry-server/src/resources/points-registry-server.jar
         remote: /opt/action-test
         host: ${{ secrets.DOCKER_IP }}
         username: ${{ secrets.DOCKER_ID }}
