@@ -15,12 +15,12 @@ jobs:
       uses: actions/setup-java@v1  #使用官方脚本创建java环境
       with:
         java-version: 1.8
-    - name: maven build
-      run: mvn package
+#    - name: maven build
+#      run: mvn package
     - name: scp
       uses: garygrossgarten/github-action-scp@release
       with:
-        local: /base-projects/registry-server/src/resources/points-registry-server.jar
+        local: /home/runner/work/action-test/action-test/base-projects/registry-server/src/resources/points-registry-server.jar
         remote: /opt/action-test
         host: ${{ secrets.DOCKER_IP }}
         username: ${{ secrets.DOCKER_ID }}
