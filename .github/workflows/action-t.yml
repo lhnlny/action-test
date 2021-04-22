@@ -19,7 +19,6 @@ jobs:
     - name: Publish package
       run: mvn --batch-mode deploy
       env:
-        GITHUB_ACTOR: 'lhnlny'
         GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
 
 #    - name: maven build
