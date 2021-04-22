@@ -10,7 +10,9 @@
         <relativePath/>
     </parent>
 
-    <artifactId>base-projects</artifactId>
+    <groupId>com.yizi.b2b</groupId>
+    <artifactId>action-test</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
