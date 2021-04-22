@@ -15,16 +15,22 @@ jobs:
       uses: actions/setup-java@v1  #使用官方脚本创建java环境
       with:
         java-version: 1.8
-    - name: maven build
-      run: mvn package
-    - name: scp
-      uses: garygrossgarten/github-action-scp@release
-      with:
-        local: /home/runner/work/action-test/action-test/registry-server/target/points-registry-server.jar
-        remote: /opt/action-test
-        host: 10.128.10.21
-        username: root
-        password: hxd@20191231
-        port: 22
+        distribution: 'adopt'
+    - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
+
+#    - name: maven build
+#      run: mvn package
+#    - name: scp
+#      uses: garygrossgarten/github-action-scp@release
+#      with:
+#        local: /home/runner/work/action-test/action-test/registry-server/target/points-registry-server.jar
+#        remote: /opt/action-test
+#        host: 10.128.10.21
+#        username: root
+#        password: hxd@20191231
+#        port: 22
 
 
