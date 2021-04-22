@@ -16,7 +16,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Publish package
-      run: mvn --debug-x deploy
+      run: mvn --debug deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
 
