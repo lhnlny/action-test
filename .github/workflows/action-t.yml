@@ -22,9 +22,9 @@ jobs:
       with:
         local: /home/runner/work/action-test/action-test/registry-server/target/points-registry-server.jar
         remote: /opt/action-test
-        host: ${{ secrets.DOCKER_IP }}
-        username: ${{ secrets.DOCKER_ID }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        port: ${{ secrets.DOCKER_PORT }}
+        host: 10.128.10.21
+        username: root
+        password: hxd@20191231
+        port: 22
 
 
