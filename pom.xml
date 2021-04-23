@@ -36,7 +36,7 @@
     </dependencies>
     </dependencyManagement>
     <build>
-        <finalName>points-${project.artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
 
         <resources>
             <resource>
