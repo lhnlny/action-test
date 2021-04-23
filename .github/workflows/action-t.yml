@@ -31,35 +31,14 @@ on:
 #        username: root
 #        password: hxd@20191231
 #        port: 22
+env:
+  image_version: v1.0.0
+
 jobs:
   push_to_registry:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJSON(github) }}
-      run: echo "$GITHUB_CONTEXT"
-    - name: Dump job context
-      env:
-        JOB_CONTEXT: ${{ toJSON(job) }}
-      run: echo "$JOB_CONTEXT"
-    - name: Dump steps context
-      env:
-        STEPS_CONTEXT: ${{ toJSON(steps) }}
-      run: echo "$STEPS_CONTEXT"
-    - name: Dump runner context
-      env:
-        RUNNER_CONTEXT: ${{ toJSON(runner) }}
-      run: echo "$RUNNER_CONTEXT"
-    - name: Dump strategy context
-      env:
-        STRATEGY_CONTEXT: ${{ toJSON(strategy) }}
-      run: echo "$STRATEGY_CONTEXT"
-    - name: Dump matrix context
-      env:
-        MATRIX_CONTEXT: ${{ toJSON(matrix) }}
-      run: echo "$MATRIX_CONTEXT"
     - name: Check out the repo
       uses: actions/checkout@v2
     - name: maven build
@@ -70,7 +49,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GIST_TOKEN }}
         registry: docker.pkg.github.com
-        repository: lhnlny/repostitory/test-image::v1.0.0
+        repository: lhnlny/repostitory/test-image-${{ env.image_version }}
         tag_with_ref: true
 
 
