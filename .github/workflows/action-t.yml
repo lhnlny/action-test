@@ -50,7 +50,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GIST_TOKEN }}
         registry: docker.pkg.github.com
-        repository: lhnlny/repostitory/test-image-${{ env.image_version }}
+        repository: lhnlny/repostitory/registry-server-image-${{ env.image_version }}
         tag_with_ref: true
 
 
