@@ -31,13 +31,14 @@ on:
 #        username: root
 #        password: hxd@20191231
 #        port: 22
-env:
-  image_version: v1.0.0
+
 
 jobs:
   push_to_registry:
     name: Push Docker image to GitHub Packages
     runs-on: ubuntu-latest
+    env:
+      image_version: v1.0.1
     steps:
     - name: Check out the repo
       uses: actions/checkout@v2
