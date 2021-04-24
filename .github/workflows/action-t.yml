@@ -49,7 +49,7 @@ jobs:
       with:
         username: ${{ github.actor }}
         password: ${{ secrets.GIST_TOKEN }}
-        dockerfile: Dockerfile
+        dockerfile: registry-server/Dockerfile
         registry: docker.pkg.github.com
         repository: lhnlny/repostitory/registry-server-image-${{ env.image_version }}
         tag_with_ref: true
