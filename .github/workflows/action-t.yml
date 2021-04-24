@@ -43,7 +43,7 @@ jobs:
     - name: Check out the repo
       uses: actions/checkout@v2
     - name: maven build
-      run: mvn package
+      run: mvn --batch-mode package
     - name: Push to GitHub Packages
       uses: docker/build-push-action@v1
       with:
